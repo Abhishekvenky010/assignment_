@@ -1,0 +1,68 @@
+[
+  {
+    "type": "run_started",
+    "run_id": "run2",
+    "query": "Fix critical bug in system",
+    "timestamp": 1700000000000
+  },
+  {
+    "type": "agent_thought",
+    "task_id": null,
+    "thought": "Starting bug fix process",
+    "timestamp": 1700000001000
+  },
+  {
+    "type": "task_spawned",
+    "task_id": "task1",
+    "label": "Identify bug source",
+    "agent": "debug_agent",
+    "parallel_group": null,
+    "depends_on": [],
+    "timestamp": 1700000002000
+  },
+  {
+    "type": "task_update",
+    "task_id": "task1",
+    "status": "running",
+    "timestamp": 1700000002500
+  },
+  {
+    "type": "agent_thought",
+    "task_id": "task1",
+    "thought": "Analyzing code for bugs",
+    "timestamp": 1700000003000
+  },
+  {
+    "type": "tool_call",
+    "task_id": "task1",
+    "tool": "grep",
+    "input_summary": "pattern=error",
+    "timestamp": 1700000004000
+  },
+  {
+    "type": "tool_result",
+    "task_id": "task1",
+    "tool": "grep",
+    "output_summary": "Found potential issue",
+    "timestamp": 1700000005000
+  },
+  {
+    "type": "partial_output",
+    "task_id": "task1",
+    "content": "Bug location identified",
+    "is_final": false,
+    "timestamp": 1700000006000
+  },
+  {
+    "type": "task_update",
+    "task_id": "task1",
+    "status": "failed",
+    "error": "Unexpected error during analysis",
+    "timestamp": 1700000007000
+  },
+  {
+    "type": "run_error",
+    "error": "Run failed due to task failure",
+    "timestamp": 1700000008000
+  }
+]
