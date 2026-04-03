@@ -1,20 +1,15 @@
-// Function to load events from JSON files
-async function loadEvents(type) {
-  const response = await fetch(`/mock/fixtures/${type}.json`);
-  if (!response.ok) {
-    throw new Error(`Failed to load ${type}.json`);
-  }
-  return response.json();
-}
+// Import fixture data
+import successEvents from './fixtures/run_success.json';
+import errorEvents from './fixtures/run_error.json';
 
 // Function to load success events
 function loadSuccessEvents() {
-  return loadEvents('run_success');
+  return Promise.resolve(successEvents);
 }
 
 // Function to load error events
 function loadErrorEvents() {
-  return loadEvents('run_error');
+  return Promise.resolve(errorEvents);
 }
 
 // Function to play events sequentially with random delays

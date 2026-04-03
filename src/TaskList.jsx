@@ -25,10 +25,10 @@ function TaskList({ tasks, taskOrder, thoughts, showReasoning }) {
       groupTasks.forEach(id => rendered.add(id));
       items.push(
         <div key={task.parallel_group} className="rounded-xl border border-gray-200 shadow-sm p-4 bg-gray-50 mb-4 border-l-2 border-gray-300 pl-4">
-          <h4 className="text-lg font-semibold mb-2 mt-6">Parallel Tasks</h4>
-          <div className="flex gap-4">
+          <h4 className="text-lg font-semibold mb-2 mt-6">⚡ Parallel Tasks</h4>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {groupTasks.map(id => (
-              <div key={id} className="flex-1">
+              <div key={id}>
                 <TaskCard task={tasks[id]} thoughts={thoughts.filter(t => t.task_id === id)} showReasoning={showReasoning} />
               </div>
             ))}
